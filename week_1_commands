@@ -1,0 +1,418 @@
+student@oslab-02:~/Desktop$ echo "Welcome to MIT"
+Welcome to MIT
+student@oslab-02:~/Desktop$ echo $USER
+student
+student@oslab-02:~/Desktop$ who
+student  seat0        2024-07-23 09:40 (login screen)
+student  tty2         2024-07-23 09:40 (tty2)
+student@oslab-02:~/Desktop$ ls
+ abhishek_230905042       'OOP Lab Manual 2023-24.pdf'
+'CSE 3142 OSLAB2024.pdf'
+student@oslab-02:~/Desktop$ ls OOP*
+'OOP Lab Manual 2023-24.pdf'
+student@oslab-02:~/Desktop$ ls -l
+total 25464
+drwxrwxr-x 2 student student     4096 Jul 22 11:09  abhishek_230905042
+-rw-rw-r-- 1 student student   746927 Jul 23 11:32 'CSE 3142 OSLAB2024.pdf'
+-rw-rw-r-- 1 student student 25320857 Jul 22 09:06 'OOP Lab Manual 2023-24.pdf'
+student@oslab-02:~/Desktop$ ls -a
+ .    abhishek_230905042       'OOP Lab Manual 2023-24.pdf'
+ ..  'CSE 3142 OSLAB2024.pdf'
+student@oslab-02:~/Desktop$ pwd
+/home/student/Desktop
+student@oslab-02:~/Desktop$ cd abhishek_230905042
+student@oslab-02:~/Desktop/abhishek_230905042$ pwd
+/home/student/Desktop/abhishek_230905042
+student@oslab-02:~/Desktop/abhishek_230905042$ cd ~
+student@oslab-02:~$ pwd
+/home/student
+student@oslab-02:~$ cd abhishek_230905042
+bash: cd: abhishek_230905042: No such file or directory
+student@oslab-02:~$ ls
+1          Desktop    Downloads  Pictures  snap       Videos
+230905054  Documents  Music      Public    Templates  week
+student@oslab-02:~$ cd Desktop
+student@oslab-02:~/Desktop$ ls
+ abhishek_230905042       'OOP Lab Manual 2023-24.pdf'
+'CSE 3142 OSLAB2024.pdf'
+student@oslab-02:~/Desktop$ cd abhishek_230905042
+student@oslab-02:~/Desktop/abhishek_230905042$ cd ..
+student@oslab-02:~/Desktop$ pwd
+/home/student/Desktop
+student@oslab-02:~/Desktop$ cat > file_creation
+cat >
+os.txt
+Welcome to MIT Manipal
+You are in Dept. of CSE
+student@oslab-02:~/Desktop$ cat os.txt
+cat: os.txt: No such file or directory
+student@oslab-02:~/Desktop$ cat file_creation
+cat >
+os.txt
+Welcome to MIT Manipal
+You are in Dept. of CSE
+student@oslab-02:~/Desktop$ cat new_file
+cat: new_file: No such file or directory
+student@oslab-02:~/Desktop$ cat > new_file
+student@oslab-02:~/Desktop$ cp file_creation new_file
+student@oslab-02:~/Desktop$ cat new_file
+cat >
+os.txt
+Welcome to MIT Manipal
+You are in Dept. of CSE
+student@oslab-02:~/Desktop$ mv file_creation first_file
+student@oslab-02:~/Desktop$ mv new_file copied_file
+student@oslab-02:~/Desktop$ mv copied_file made_by_mv_file
+student@oslab-02:~/Desktop$ mv first_file made_by_mv_file Ketan_220905260
+student@oslab-02:~/Desktop$ ls
+ abhishek_230905042        Ketan_220905260
+'CSE 3142 OSLAB2024.pdf'  'OOP Lab Manual 2023-24.pdf'
+student@oslab-02:~/Desktop$ cd Ketan_220905260
+student@oslab-02:~/Desktop/Ketan_220905260$ ls
+first_file  made_by_mv_file
+student@oslab-02:~/Desktop/Ketan_220905260$ rm made_bt_mv_file
+rm: cannot remove 'made_bt_mv_file': No such file or directory
+student@oslab-02:~/Desktop/Ketan_220905260$ rm made_by_mv_file
+student@oslab-02:~/Desktop/Ketan_220905260$ ls
+first_file
+student@oslab-02:~/Desktop/Ketan_220905260$ mv first_file first
+student@oslab-02:~/Desktop/Ketan_220905260$ cp first second
+student@oslab-02:~/Desktop/Ketan_220905260$ ls
+first  second
+student@oslab-02:~/Desktop/Ketan_220905260$ rm Ketan_220905260/second
+rm: cannot remove 'Ketan_220905260/second': No such file or directory
+student@oslab-02:~/Desktop/Ketan_220905260$ cd ..
+student@oslab-02:~/Desktop$ rm Ketan_220905260/second
+student@oslab-02:~/Desktop$ ls
+ abhishek_230905042        Ketan_220905260
+'CSE 3142 OSLAB2024.pdf'  'OOP Lab Manual 2023-24.pdf'
+student@oslab-02:~/Desktop$ cd Ketan_220905260
+student@oslab-02:~/Desktop/Ketan_220905260$ ls
+first
+student@oslab-02:~/Desktop/Ketan_220905260$ mkdir Ketan
+student@oslab-02:~/Desktop/Ketan_220905260$ rm Ketan
+rm: cannot remove 'Ketan': Is a directory
+student@oslab-02:~/Desktop/Ketan_220905260$ rmdir Ketan
+student@oslab-02:~/Desktop/Ketan_220905260$ ls
+first
+student@oslab-02:~/Desktop/Ketan_220905260$ cd ..
+student@oslab-02:~/Desktop$ mkdir Ketan
+student@oslab-02:~/Desktop$ ls
+ abhishek_230905042        Ketan_220905260
+'CSE 3142 OSLAB2024.pdf'  'OOP Lab Manual 2023-24.pdf'
+ Ketan
+student@oslab-02:~/Desktop$ cp Ketan_220905260 Ketan
+cp: -r not specified; omitting directory 'Ketan_220905260'
+student@oslab-02:~/Desktop$ cpdir Ketan_220905260 Ketan
+Command 'cpdir' not found, did you mean:
+  command 'cdir' from deb cdtool (2.1.8-release-8)
+  command 'cpdic' from deb canna-utils (3.7p3-20)
+Try: sudo apt install <deb name>
+student@oslab-02:~/Desktop$ ls -l
+total 25472
+drwxrwxr-x 2 student student     4096 Jul 22 11:09  abhishek_230905042
+-rw-rw-r-- 1 student student   746927 Jul 23 11:32 'CSE 3142 OSLAB2024.pdf'
+drwxrwxr-x 2 student student     4096 Jul 23 14:33  Ketan
+drwxrwxr-x 2 student student     4096 Jul 23 14:33  Ketan_220905260
+-rw-rw-r-- 1 student student 25320857 Jul 22 09:06 'OOP Lab Manual 2023-24.pdf'
+student@oslab-02:~/Desktop$ who am i
+student@oslab-02:~/Desktop$ whoami
+student
+student@oslab-02:~/Desktop$ cp first/Ketan_220905260 first/Ketan
+cp: cannot stat 'first/Ketan_220905260': No such file or directory
+student@oslab-02:~/Desktop$ cp Ketan_220905260/first Ketan/first
+student@oslab-02:~/Desktop$ cd Ketan
+student@oslab-02:~/Desktop/Ketan$ ls
+first
+student@oslab-02:~/Desktop/Ketan$ cp Ketan_220905260/first Ketan/second
+cp: cannot stat 'Ketan_220905260/first': No such file or directory
+student@oslab-02:~/Desktop/Ketan$ cd ..
+student@oslab-02:~/Desktop$ cp Ketan_220905260/first Ketan/second
+student@oslab-02:~/Desktop$ cd Ketan
+student@oslab-02:~/Desktop/Ketan$ ls
+first  second
+student@oslab-02:~/Desktop/Ketan$ cd ..
+student@oslab-02:~/Desktop$ ls -l
+total 25472
+drwxrwxr-x 2 student student     4096 Jul 22 11:09  abhishek_230905042
+-rw-rw-r-- 1 student student   746927 Jul 23 11:32 'CSE 3142 OSLAB2024.pdf'
+drwxrwxr-x 2 student student     4096 Jul 23 14:42  Ketan
+drwxrwxr-x 2 student student     4096 Jul 23 14:33  Ketan_220905260
+-rw-rw-r-- 1 student student 25320857 Jul 22 09:06 'OOP Lab Manual 2023-24.pdf'
+student@oslab-02:~/Desktop$ cd Ketan
+student@oslab-02:~/Desktop/Ketan$ ls
+first  second
+student@oslab-02:~/Desktop/Ketan$ ls -l
+total 8
+-rw-rw-r-- 1 student student 60 Jul 23 14:41 first
+-rw-rw-r-- 1 student student 60 Jul 23 14:42 second
+student@oslab-02:~/Desktop/Ketan$ chmod u+x first
+student@oslab-02:~/Desktop/Ketan$ chmod ugo+x second
+student@oslab-02:~/Desktop/Ketan$ ls -l
+total 8
+-rwxrw-r-- 1 student student 60 Jul 23 14:41 first
+-rwxrwxr-x 1 student student 60 Jul 23 14:42 second
+student@oslab-02:~/Desktop/Ketan$ chmod a-r, o+w second; ls -l
+chmod: invalid mode: ‘a-r,’
+Try 'chmod --help' for more information.
+total 8
+-rwxrw-r-- 1 student student 60 Jul 23 14:41 first
+-rwxrwxr-x 1 student student 60 Jul 23 14:42 second
+student@oslab-02:~/Desktop/Ketan$ chmod ugo-r, o+w second; ls -l
+chmod: invalid mode: ‘ugo-r,’
+Try 'chmod --help' for more information.
+total 8
+-rwxrw-r-- 1 student student 60 Jul 23 14:41 first
+-rwxrwxr-x 1 student student 60 Jul 23 14:42 second
+student@oslab-02:~/Desktop/Ketan$ chmod a-x, o+w second; ls -l
+chmod: invalid mode: ‘a-x,’
+Try 'chmod --help' for more information.
+total 8
+-rwxrw-r-- 1 student student 60 Jul 23 14:41 first
+-rwxrwxr-x 1 student student 60 Jul 23 14:42 second
+student@oslab-02:~/Desktop/Ketan$ chmod ugo-x, o+w second; ls -l
+chmod: invalid mode: ‘ugo-x,’
+Try 'chmod --help' for more information.
+total 8
+-rwxrw-r-- 1 student student 60 Jul 23 14:41 first
+-rwxrwxr-x 1 student student 60 Jul 23 14:42 second
+student@oslab-02:~/Desktop/Ketan$ chmod 666 second
+student@oslab-02:~/Desktop/Ketan$ ls -l second
+-rw-rw-rw- 1 student student 60 Jul 23 14:42 second
+student@oslab-02:~/Desktop/Ketan$ date
+Tue Jul 23 02:48:23 PM IST 2024
+student@oslab-02:~/Desktop/Ketan$ echo the date today is 'date'
+the date today is date
+student@oslab-02:~/Desktop/Ketan$ echo the date today is `date`
+the date today is Tue Jul 23 02:51:25 PM IST 2024
+student@oslab-02:~/Desktop/Ketan$ ls | wc -l
+2
+student@oslab-02:~/Desktop/Ketan$ cd ..
+student@oslab-02:~/Desktop$ ls
+ abhishek_230905042        Ketan_220905260
+'CSE 3142 OSLAB2024.pdf'  'OOP Lab Manual 2023-24.pdf'
+ Ketan
+student@oslab-02:~/Desktop$ cd Ketan_220905260
+student@oslab-02:~/Desktop/Ketan_220905260$ ls
+first  Week_1
+student@oslab-02:~/Desktop/Ketan_220905260$ mkdir Week_1
+mkdir: cannot create directory ‘Week_1’: File exists
+student@oslab-02:~/Desktop/Ketan_220905260$ mkdir Week_1
+student@oslab-02:~/Desktop/Ketan_220905260$ ls
+first  Week_1  Week_1_commands
+student@oslab-02:~/Desktop/Ketan_220905260$ cd ~
+student@oslab-02:~$ ls
+1          Desktop    Downloads  Pictures  snap       Videos
+230905054  Documents  Music      Public    Templates  week
+student@oslab-02:~$ cd Desktop
+student@oslab-02:~/Desktop$ ls
+ abhishek_230905042        Ketan_220905260
+'CSE 3142 OSLAB2024.pdf'  'OOP Lab Manual 2023-24.pdf'
+ Ketan
+student@oslab-02:~/Desktop$ cd ..
+student@oslab-02:~$ cd ..
+student@oslab-02:/home$ ls
+exam1  exam2  exam3  exam4  lost+found  manu  oslab  student
+student@oslab-02:/home$ cd student
+student@oslab-02:~$ ls
+1          Desktop    Downloads  Pictures  snap       Videos
+230905054  Documents  Music      Public    Templates  week
+student@oslab-02:~$ cd ..
+student@oslab-02:/home$ cd ..
+student@oslab-02:/$ ls
+bin                lib                opt                 srv
+bin.usr-is-merged  lib32              proc                sys
+boot               lib64              root                tmp
+cdrom              lib.usr-is-merged  run                 usr
+dev                lost+found         sbin                var
+etc                media              sbin.usr-is-merged
+home               mnt                snap
+student@oslab-02:/$ cd home
+student@oslab-02:/home$ mkdir Ketan/first Ketan/second
+mkdir: cannot create directory ‘Ketan/first’: No such file or directory
+mkdir: cannot create directory ‘Ketan/second’: No such file or directory
+student@oslab-02:/home$ mkdir Ketan
+mkdir: cannot create directory ‘Ketan’: Permission denied
+student@oslab-02:/home$ ls
+exam1  exam2  exam3  exam4  lost+found  manu  oslab  student
+student@oslab-02:/home$ cd student
+student@oslab-02:~$ ls
+1          Desktop    Downloads  Pictures  snap       Videos
+230905054  Documents  Music      Public    Templates  week
+student@oslab-02:~$ rmdir Ketan
+rmdir: failed to remove 'Ketan': No such file or directory
+student@oslab-02:~$ cd Desktop
+student@oslab-02:~/Desktop$ rmdir Ketan
+rmdir: failed to remove 'Ketan': Directory not empty
+student@oslab-02:~/Desktop$ rm -rf Ketan
+student@oslab-02:~/Desktop$ mkdir Ketan/first Ketan/second
+mkdir: cannot create directory ‘Ketan/first’: No such file or directory
+mkdir: cannot create directory ‘Ketan/second’: No such file or directory
+student@oslab-02:~/Desktop$ mkdir Ketan
+student@oslab-02:~/Desktop$ mkdir Ketan/first Ketan/second
+student@oslab-02:~/Desktop$ cat > file1
+student@oslab-02:~/Desktop$ rm file1
+student@oslab-02:~/Desktop$ cat > Ketan/first/file1
+Hello, This is a file in the folder "Ketan/first"
+this file will be moved to other directories
+student@oslab-02:~/Desktop$ cp Ketan/first/file1 Ketan/second
+student@oslab-02:~/Desktop$ cd Ketan
+student@oslab-02:~/Desktop/Ketan$ cd second
+student@oslab-02:~/Desktop/Ketan/second$ ls
+file1
+student@oslab-02:~/Desktop/Ketan/second$ cd ..
+student@oslab-02:~/Desktop/Ketan$ cd ..
+student@oslab-02:~/Desktop$ cat > Ketan/second/file2
+there are a total of `ls | wc -l` files in this current directory
+there are a total of `who-q` users in this directory
+student@oslab-02:~/Desktop$ cat Ketan/second/file2
+there are a total of `ls | wc -l` files in this current directory
+there are a total of `who-q` users in this directory
+student@oslab-02:~/Desktop$ who-q
+who-q: command not found
+student@oslab-02:~/Desktop$ who -q
+student student
+# users=2
+student@oslab-02:~/Desktop$ head -5 Ketan/first/file1
+Hello, This is a file in the folder "Ketan/first"
+this file will be moved to other directories
+student@oslab-02:~/Desktop$ grep is Ketan/first/file1
+Hello, This is a file in the folder "Ketan/first"
+this file will be moved to other directories
+student@oslab-02:~/Desktop$ sort Ketan/first/file1
+Hello, This is a file in the folder "Ketan/first"
+this file will be moved to other directories
+student@oslab-02:~/Desktop$ cd Ketan 
+student@oslab-02:~/Desktop/Ketan$ ls
+first  second
+student@oslab-02:~/Desktop/Ketan$ cd second
+student@oslab-02:~/Desktop/Ketan/second$ who -q
+student student
+# users=2
+student@oslab-02:~/Desktop/Ketan/second$ cat who -q>>file2
+cat: invalid option -- 'q'
+Try 'cat --help' for more information.
+student@oslab-02:~/Desktop/Ketan/second$ cat who -q >> file2
+cat: invalid option -- 'q'
+Try 'cat --help' for more information.
+student@oslab-02:~/Desktop/Ketan/second$ who -q >> file2
+student@oslab-02:~/Desktop/Ketan/second$ cat file2
+there are a total of `ls | wc -l` files in this current directory
+there are a total of `who-q` users in this directory
+student student
+# users=2
+student@oslab-02:~/Desktop/Ketan/second$ ls | wc -1 >> file2
+wc: invalid option -- '1'
+Try 'wc --help' for more information.
+student@oslab-02:~/Desktop/Ketan/second$ ls | wc -l >> file2
+student@oslab-02:~/Desktop/Ketan/second$ cat file2
+there are a total of `ls | wc -l` files in this current directory
+there are a total of `who-q` users in this directory
+student student
+# users=2
+2
+student@oslab-02:~/Desktop/Ketan/second$ ls
+file1  file2
+student@oslab-02:~/Desktop/Ketan/second$ ls f* && ls F*
+file1  file2
+ls: cannot access 'F*': No such file or directory
+student@oslab-02:~/Desktop/Ketan/second$ ls f* || ls F*
+file1  file2
+student@oslab-02:~/Desktop/Ketan/second$ rm file2
+student@oslab-02:~/Desktop/Ketan/second$ ls
+file1
+student@oslab-02:~/Desktop/Ketan/second$ who -q >> File2
+student@oslab-02:~/Desktop/Ketan/second$ ls | wc-l >> File2
+wc-l: command not found
+student@oslab-02:~/Desktop/Ketan/second$ ls | wc -l >> File2
+student@oslab-02:~/Desktop/Ketan/second$ cat File2
+student student
+# users=2
+2
+student@oslab-02:~/Desktop/Ketan/second$ ls
+file1  File2
+student@oslab-02:~/Desktop/Ketan/second$ ls f* && ls F*
+file1
+File2
+student@oslab-02:~/Desktop/Ketan/second$ ls f* || ls F*
+file1
+student@oslab-02:~/Desktop/Ketan/second$ mv File2* file2*
+student@oslab-02:~/Desktop/Ketan/second$ ls f* || ls F*
+ file1  'file2*'
+student@oslab-02:~/Desktop/Ketan/second$ mv file2* file2
+student@oslab-02:~/Desktop/Ketan/second$ ls f* || ls F*
+file1  file2
+student@oslab-02:~/Desktop/Ketan/second$ ls | we -l
+Command 'we' not found, but can be installed with:
+sudo apt install xwpe
+student@oslab-02:~/Desktop/Ketan/second$ ls | wc -l
+2
+student@oslab-02:~/Desktop/Ketan/second$ cd ..
+student@oslab-02:~/Desktop/Ketan$ ls
+first  second
+student@oslab-02:~/Desktop/Ketan$ cat > hello.c
+printf("Hello World");
+student@oslab-02:~/Desktop/Ketan$ cc hello.c && ./a.out
+hello.c:1:8: error: expected declaration specifiers or ‘...’ before string constant
+    1 | printf("Hello World");
+      |        ^~~~~~~~~~~~~
+student@oslab-02:~/Desktop/Ketan$ rm hello.c
+student@oslab-02:~/Desktop/Ketan$ cat > hello.c
+#include<stdio.h>
+printf("Hello world");
+student@oslab-02:~/Desktop/Ketan$ cc hello.c && ./a.out
+hello.c:2:8: error: expected declaration specifiers or ‘...’ before string constant
+    2 | printf("Hello world");
+      |        ^~~~~~~~~~~~~
+student@oslab-02:~/Desktop/Ketan$ cat hello.c
+#include<stdio.h>
+printf("Hello world");
+student@oslab-02:~/Desktop/Ketan$ rm hello.c
+student@oslab-02:~/Desktop/Ketan$ cc hello.c && ./a.out
+cc1: fatal error: hello.c: No such file or directory
+compilation terminated.
+student@oslab-02:~/Desktop/Ketan$ cat > hello.c
+#include<stdio.h>
+printf("hello world");
+student@oslab-02:~/Desktop/Ketan$ cc hello.c && ./a.out
+hello.c:2:8: error: expected declaration specifiers or ‘...’ before string constant
+    2 | printf("hello world");
+      |        ^~~~~~~~~~~~~
+student@oslab-02:~/Desktop/Ketan$ ls
+first  hello.c  second
+student@oslab-02:~/Desktop/Ketan$ cat hello.c
+#include<stdio.h>
+printf("hello world");
+student@oslab-02:~/Desktop/Ketan$ cc hello.c
+hello.c:2:8: error: expected declaration specifiers or ‘...’ before string constant
+    2 | printf("hello world");
+      |        ^~~~~~~~~~~~~
+student@oslab-02:~/Desktop/Ketan$ rm hello.c
+student@oslab-02:~/Desktop/Ketan$ cat > hello.c
+#include<stdio.h>
+#include<stdlib.h>
+int a=10;
+student@oslab-02:~/Desktop/Ketan$ rm hello.c
+student@oslab-02:~/Desktop/Ketan$ cat > hello.c
+#include<stdio.h>
+int main()
+{
+printf("hello world");
+}student@oslab-02:~/Desktop/Ketan$ cc hello.c && ./a.out
+hello worldstudent@oslab-02:~/Desktop/Ketan$ wc -l hello.c
+4 hello.c
+student@oslab-02:~/Desktop/Ketan$ wc -l file1
+wc: file1: No such file or directory
+student@oslab-02:~/Desktop/Ketan$ wc -l first/file1
+2 first/file1
+student@oslab-02:~/Desktop/Ketan$ date
+Tue Jul 23 03:39:08 PM IST 2024
+student@oslab-02:~/Desktop/Ketan$ ls 
+a.out  first  hello.c  second
+student@oslab-02:~/Desktop/Ketan$ pwd
+/home/student/Desktop/Ketan
+student@oslab-02:~/Desktop/Ketan$ cd second
+student@oslab-02:~/Desktop/Ketan/second$ ls [fF]*
+file1  file2
+student@oslab-02:~/Desktop/Ketan/second$ 
+
