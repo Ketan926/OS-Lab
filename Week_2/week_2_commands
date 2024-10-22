@@ -1,0 +1,599 @@
+student@oslab-02:~$ pwd
+/home/student
+student@oslab-02:~$ echo $HOME, $PATH
+/home/student, /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+student@oslab-02:~$ echo $HOME
+/home/student
+student@oslab-02:~$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+student@oslab-02:~$ echo $MAIL
+
+student@oslab-02:~$ echo $USER, $SHELL, $TERM
+student, /bin/bash, xterm-256color
+student@oslab-02:~$ firstname=Ketan Goud
+Goud: command not found
+student@oslab-02:~$ firstname=Ketan
+student@oslab-02:~$ lastname=Goud
+student@oslab-02:~$ echo $firstname, $lastname
+Ketan, Goud
+student@oslab-02:~$ echo $firstname $lastname
+Ketan Goud
+student@oslab-02:~$ export lastname
+student@oslab-02:~$ sh
+$ echo $firstname $lastname
+Goud
+$ 
+student@oslab-02:~$ echo $firstname $lastname
+Ketan Goud
+student@oslab-02:~$ cat >script.sh~
+^C
+student@oslab-02:~$ cat >script.sh
+$0 echo
+echo the name of this script is $0 echo the first argument is $1
+echo a list of all the arguments is $* echo this script places the date into a
+temporary file echo called $1.$$ date > $1.$$
+# redirect the output of
+date
+ls $1.$$
+# list the file rm $1.$$
+# remove the
+student@oslab-02:~$ chmod +x script.sh
+student@oslab-02:~$ ./script.sh Rahul Sachin Kumble
+^C
+bstudent@oslab-02:~$ 
+student@oslab-02:~$ cat >script.sh
+echo the name of this script is $0
+echo the first argument is $1
+echo a list of all the arguments is $*
+echo this script places the date into a
+temporary file echo called $1.$$ date > $1.$$
+ls $1.$$
+student@oslab-02:~$ chmod +x script.sh
+student@oslab-02:~$ ./script.sh Rahul Sachin Kumble
+the name of this script is ./script.sh
+the first argument is Rahul
+a list of all the arguments is Rahul Sachin Kumble
+this script places the date into a
+./script.sh: line 5: temporary: command not found
+Rahul.4284
+student@oslab-02:~$ ^C
+student@oslab-02:~$ cat >script.sh
+echo the name of this script is $0
+echo the first argument is $1
+echo a list of all the arguments is $*
+echo this script places the date into a
+echo called $1.$$ date > $1.$$
+ls $1.$$
+student@oslab-02:~$ chmod +x script.sh
+student@oslab-02:~$ ./script.sh Rahul Sachin Kumble
+the name of this script is ./script.sh
+the first argument is Rahul
+a list of all the arguments is Rahul Sachin Kumble
+this script places the date into a
+Rahul.4350
+student@oslab-02:~$ $USER
+student: command not found
+student@oslab-02:~$ $SHELL
+student@oslab-02:~$ firstName=Anand lastname=Sharma age=35
+student@oslab-02:~$ cho $firstname
+$lastname $age
+Command 'cho' not found, did you mean:
+  command 'cht' from deb chemtool (1.6.14-6)
+  command 'co' from deb rcs (5.10.1-1)
+  command 'chg' from deb mercurial (6.5.3-1)
+  command 'cdo' from deb cdo (2.3.0-1)
+  command 'who' from deb coreutils (9.4-2ubuntu2)
+  command 'echo' from deb coreutils (9.4-2ubuntu2)
+Try: sudo apt install <deb name>
+Sharma: command not found
+student@oslab-02:~$ echo $firstname $lastname $age
+Sharma 35
+student@oslab-02:~$ echo $firstName $lastname $age
+Anand Sharma 35
+student@oslab-02:~$ name = “Anand Sharma”
+Command 'name' not found, did you mean:
+  command 'mame' from snap mame (mame0264)
+  command 'lame' from deb lame (3.100-6)
+  command 'named' from deb bind9 (1:9.18.18-0ubuntu2)
+  command 'namei' from deb util-linux (2.39.2-6ubuntu1)
+  command 'uname' from deb coreutils (9.4-2ubuntu2)
+  command 'mame' from deb mame (0.261+dfsg.1-1)
+  command 'nvme' from deb nvme-cli (2.7.1-1)
+  command 'nama' from deb nama (1.216-2)
+  command 'nam' from deb nam (1.15-6)
+See 'snap info <snapname>' for additional versions.
+student@oslab-02:~$ name2 = “Anand Sharma”
+Command 'name2' not found, did you mean:
+  command 'namei' from deb util-linux (2.39.2-6ubuntu1)
+  command 'named' from deb bind9 (1:9.18.18-0ubuntu2)
+Try: sudo apt install <deb name>
+student@oslab-02:~$ $USER
+student: command not found
+student@oslab-02:~$ $who
+student@oslab-02:~$ $whoami
+student@oslab-02:~$ password=manipal
+student@oslab-02:~$ echo $password
+manipal
+student@oslab-02:~$ readonly password2
+student@oslab-02:~$ readonly
+declare -r BASHOPTS="checkwinsize:cmdhist:complete_fullquote:expand_aliases:extglob:extquote:force_fignore:globasciiranges:globskipdots:histappend:interactive_comments:patsub_replacement:progcomp:promptvars:sourcepath"
+declare -ar BASH_VERSINFO=([0]="5" [1]="2" [2]="21" [3]="1" [4]="release" [5]="x86_64-pc-linux-gnu")
+declare -ir EUID="1001"
+declare -ir PPID="3435"
+declare -r SHELLOPTS="braceexpand:emacs:hashall:histexpand:history:interactive-comments:monitor"
+declare -ir UID="1001"
+declare -r password2
+student@oslab-02:~$ password2=ketan
+bash: password2: readonly variable
+student@oslab-02:~$ cat > file2.sh
+echo "enter your name:" read name
+echo your name is $name
+student@oslab-02:~$ car file2.sh
+Command 'car' not found, but can be installed with:
+sudo apt install ucommon-utils
+student@oslab-02:~$ cat file2.sh
+echo "enter your name:" read name
+echo your name is $name
+student@oslab-02:~$ ./file2.sh
+bash: ./file2.sh: Permission denied
+student@oslab-02:~$ cc file2.h
+cc1: fatal error: file2.h: No such file or directory
+compilation terminated.
+student@oslab-02:~$ cc file2.sh
+/usr/bin/ld:file2.sh: file format not recognized; treating as linker script
+/usr/bin/ld:file2.sh:1: syntax error
+collect2: error: ld returned 1 exit status
+student@oslab-02:~$ sort -o file2.sh &
+[1] 4665
+student@oslab-02:~$ nohup sort -o file2.sh &
+[2] 4671
+
+[1]+  Stopped                 sort -o file2.sh
+student@oslab-02:~$ nohup: ignoring input and appending output to 'nohup.out'
+^C
+[2]-  Exit 2                  nohup sort -o file2.sh
+student@oslab-02:~$ ps
+    PID TTY          TIME CMD
+   3435 pts/0    00:00:00 bash
+   4369 pts/0    00:00:00 bash
+   4665 pts/0    00:00:00 sort
+   4681 pts/0    00:00:00 ps
+student@oslab-02:~$ kill PID 4665
+bash: kill: PID: arguments must be process or job IDs
+student@oslab-02:~$ (sleep 10; echo done) &
+[2] 4712
+student@oslab-02:~$ ps
+    PID TTY          TIME CMD
+   3435 pts/0    00:00:00 bash
+   4369 pts/0    00:00:00 bash
+   4665 pts/0    00:00:00 sort
+   4712 pts/0    00:00:00 bash
+   4713 pts/0    00:00:00 sleep
+   4714 pts/0    00:00:00 ps
+student@oslab-02:~$ done
+^C
+[2]-  Done                    ( sleep 10; echo done )
+student@oslab-02:~$ (sleep 10; echo done) &
+$ kill pid
+[2] 4725
+$: command not found
+student@oslab-02:~$ (sleep 10; echo done) &
+[3] 4735
+student@oslab-02:~$ $ kill piddone
+(sleep 10; echo done)done
+^C
+[2]   Done                    ( sleep 10; echo done )
+[3]-  Done                    ( sleep 10; echo done )
+student@oslab-02:~$ (sleep 10; echo done) &
+[2] 4738
+student@oslab-02:~$ done
+ps
+    PID TTY          TIME CMD
+   3435 pts/0    00:00:00 bash
+   4369 pts/0    00:00:00 bash
+   4665 pts/0    00:00:00 sort
+   4740 pts/0    00:00:00 ps
+[2]-  Done                    ( sleep 10; echo done )
+student@oslab-02:~$ (sleep 10; echo done) &
+[2] 4741
+student@oslab-02:~$ done
+(sleep 10; echo done$ kill pid
+$: command not found
+[2]-  Done                    ( sleep 10; echo done )
+student@oslab-02:~$ (sleep 10; echo done) &
+[2] 4752
+student@oslab-02:~$ done
+kill pid
+bash: kill: pid: arguments must be process or job IDs
+[2]-  Done                    ( sleep 10; echo done )
+student@oslab-02:~$ verb=sing
+student@oslab-02:~$ echo i like `$verb`ing
+Command 'sing' not found, did you mean:
+  command 'ping' from deb iputils-ping (3:20221126-1)
+  command 'ping' from deb inetutils-ping (2:2.4-3ubuntu1)
+  command 'king' from deb king (2.24+dfsg2-2)
+  command 'ding' from deb ding (1.9-7)
+  command 'wing' from deb wing (0.7-32)
+  command 'bing' from deb bing (1.3.5-5)
+  command 'jing' from deb jing (20220510-3)
+  command 'sng' from deb sng (1.1.0-4)
+Try: sudo apt install <deb name>
+i like ing
+student@oslab-02:~$ echo i like `verb`ing
+Command 'verb' not found, did you mean:
+  command 'derb' from deb icu-devtools (74.2-1ubuntu1)
+  command 'erb' from deb ruby (1:3.1)
+Try: sudo apt install <deb name>
+i like ing
+student@oslab-02:~$ (sleep 10; echo done) &
+[2] 4883
+student@oslab-02:~$ done
+ps
+    PID TTY          TIME CMD
+   3435 pts/0    00:00:00 bash
+   4369 pts/0    00:00:00 bash
+   4665 pts/0    00:00:00 sort
+   4885 pts/0    00:00:00 ps
+[2]-  Done                    ( sleep 10; echo done )
+student@oslab-02:~$ (sleep 10; echo done) &
+[2] 4886
+student@oslab-02:~$ done
+kill pid 4886
+bash: kill: pid: arguments must be process or job IDs
+bash: kill: (4886) - No such process
+[2]-  Done                    ( sleep 10; echo done )
+student@oslab-02:~$ (sleep 10; echo done) &
+[2] 4889
+student@oslab-02:~$ done
+(sleep 10; echo done
+[2]-  Done                    ( sleep 10; echo done )
+student@oslab-02:~$ $ (sleep 10; echo done 1 ) & $ (sleep 10; echo done 2 ) &
+$ echo done 3; wait ; echo done 4
+bash: syntax error near unexpected token `sleep'
+$: command not found
+bash: wait: warning: job 1[4665] stopped
+done 4
+student@oslab-02:~$ (sleep 10; echo done 1 ) &
+[2] 4921
+student@oslab-02:~$ done 1
+(sleep 10; echo done(sleep 10; echo done 2 ) &
+[3] 4930
+[2]   Done                    ( sleep 10; echo done 1 )
+student@oslab-02:~$ done 2
+$ echo done 3; wait $ echo done 3; wait ; echo done 4
+$: command not found
+[3]-  Done                    ( sleep 10; echo done 2 )
+bash: wait: warning: job 1[4665] stopped
+done 4
+student@oslab-02:~$ (sleep 10; echo done 1 ) &
+[2] 4958
+student@oslab-02:~$ done 1
+sleep 10; echo done sleep 10; echo done 2 ) &
+bash: syntax error near unexpected token `)'
+[2]-  Done                    ( sleep 10; echo done 1 )
+student@oslab-02:~$ (sleep 10; echo done 1 ) &
+[2] 4990
+student@oslab-02:~$ done 1
+(sleep 10; echo done(sleep 10; echo done 2 ) &
+[3] 4999
+[2]   Done                    ( sleep 10; echo done 1 )
+student@oslab-02:~$ done 2
+echo done 3; wait ; echo done 3; wait ; echo done 4
+done 3
+bash: wait: warning: job 1[4665] stopped
+done 4
+student@oslab-02:~$ ls f*
+file2.sh  filename
+student@oslab-02:~$ ls .*
+.bash_history  .bashrc   .profile
+.bash_logout   .lesshst  .sudo_as_admin_successful
+
+.cache:
+event-sound-cache.tdb.04131642093145f48e7c4ef1e6f10e72.x86_64-pc-linux-gnu
+evolution
+fontconfig
+gnome-desktop-thumbnailer
+gstreamer-1.0
+ibus
+ibus-table
+ironseed
+mesa_shader_cache
+sublime-text
+thumbnails
+tracker3
+update-manager-core
+yelp
+
+.config:
+dconf                     gtk-3.0       tiling-assistant
+enchant                   gtk-4.0       ubuntu-xdg-terminals.list
+evolution                 ibus          update-notifier
+geany                     libreoffice   user-dirs.dirs
+gnome-initial-setup-done  matplotlib    user-dirs.locale
+gnome-session             nautilus      xdg-terminals.list
+GNOME-xdg-terminals.list  pulse         yelp
+goa-1.0                   sublime-text
+
+.fontconfig:
+7ef2298fde41cc6eeb7af42e48b7d293-le64.cache-9  CACHEDIR.TAG
+
+.gnupg:
+pubring.kbx  trustdb.gpg
+
+.ipynb_checkpoints:
+Untitled1-checkpoint.ipynb  Untitled-checkpoint.ipynb
+
+.ipython:
+profile_default
+
+.jupyter:
+migrated
+
+.local:
+share  state
+
+.ssh:
+student@oslab-02:~$ ls *.*
+file2.sh  lab.txt            os.txt      script.sh~       user.txt
+lab1.txt  nohup.out          Rahul.4350  Untitled1.ipynb
+lab2.txt  numberofusers.txt  script.sh   Untitled.ipynb
+student@oslab-02:~$ echo number of users are `who-q`
+who-q: command not found
+number of users are
+student@oslab-02:~$ echo number of users are `$who-q`
+-q: command not found
+number of users are
+student@oslab-02:~$ ls *?
+file2.sh  lab2.txt   numberofusers.txt  script.sh        Untitled.ipynb
+filename  lab.txt    os.txt             script.sh~       user.txt
+lab1.txt  nohup.out  Rahul.4350         Untitled1.ipynb
+
+220905249:
+
+220905260_Ketan:
+
+230905051:
+week1  week2
+
+230905342_Samarth:
+sample.class  Sample.class  sample.java  week1
+
+Adicherikandi_Sidharth_220905249:
+lab1  lab1practice.txt
+
+Desktop:
+ 220962026_OMKAR_ML   230962206_Nilamber   'OOP Lab Manual 2023-24.pdf'
+ 230905035_Srihan    'CSE 3142 OSLAB.pdf'
+
+Documents:
+
+Downloads:
+thunderbird.tmp  Week-01-ML.docx
+
+Music:
+
+Pictures:
+
+Public:
+
+snap:
+firefox           snapd-desktop-integration  sublime-text
+firmware-updater  snap-store                 thunderbird
+
+Templates:
+
+Videos:
+student@oslab-02:~$ ls *.?
+ls: cannot access '*.?': No such file or directory
+student@oslab-02:~$ cat > hello.t
+^C
+student@oslab-02:~$ cat > hello.c
+^C
+student@oslab-02:~$ ls *.?
+hello.c  hello.t
+student@oslab-02:~$ echo number of users are `$who-q`
+-q: command not found
+number of users are
+student@oslab-02:~$ ls *.???
+lab1.txt  lab.txt    numberofusers.txt  script.sh~
+lab2.txt  nohup.out  os.txt             user.txt
+student@oslab-02:~$ ls -l | grep "^-"
+-rw-rw-r-- 1 student student   58 Jul 30 14:49 file2.sh
+-rw-rw-r-- 1 student student   17 Jul 23 14:24 filename
+-rw-rw-r-- 1 student student    0 Jul 30 15:15 hello.c
+-rw-rw-r-- 1 student student    0 Jul 30 15:14 hello.t
+-rw-rw-r-- 1 student student  116 Jul 23 15:02 lab1.txt
+-rw-rw-r-- 1 student student    0 Jul 23 15:02 lab2.txt
+-rw-rw-r-- 1 student student  116 Jul 23 14:56 lab.txt
+-rw------- 1 student student   42 Jul 30 14:55 nohup.out
+-rw-rw-r-- 1 student student    0 Jul 23 15:15 numberofusers.txt
+-rw-rw-r-- 1 student student   20 Jul 23 14:29 os.txt
+-rw-rw-r-- 1 student student   23 Jul 30 14:24 Rahul.4350
+-rwxrwxr-x 1 student student  184 Jul 30 14:23 script.sh
+-rw-rw-r-- 1 student student    0 Jul 30 14:15 script.sh~
+-rw-rw-r-- 1 student student  589 Jul 26 10:52 Untitled1.ipynb
+-rw-rw-r-- 1 student student  724 Jul 26 10:52 Untitled.ipynb
+-rw-rw-r-- 1 student student  143 Jul 23 15:09 user.txt
+student@oslab-02:~$ cat > file3
+the number of users are
+^C
+student@oslab-02:~$ who-q>>file3
+who-q: command not found
+student@oslab-02:~$ who -q>>file3
+student@oslab-02:~$ cat file3
+the number of users are
+student student
+# users=2
+student@oslab-02:~$ echo number of users are `$who -q`
+-q: command not found
+number of users are
+student@oslab-02:~$ echo number of users are `who -q`
+number of users are student student # users=2
+student@oslab-02:~$ cat > file4.sh
+echo there $# command line arguements: $@
+student@oslab-02:~$ script.sh arg1 arg2
+script.sh: command not found
+student@oslab-02:~$ file4.sh arg1 arg2
+file4.sh: command not found
+student@oslab-02:~$ file4.sh ketan goud
+file4.sh: command not found
+student@oslab-02:~$ ./file4.sh ketan goud
+bash: ./file4.sh: Permission denied
+student@oslab-02:~$ chmod +x file4.sh
+student@oslab-02:~$ ./file4.sh ketan goud
+there 2 command line arguements: ketan goud
+student@oslab-02:~$ echo the first parameter is >> file4.h
+student@oslab-02:~$ $1 >> file4.h
+student@oslab-02:~$ ./file4.sh ketan goud
+there 2 command line arguements: ketan goud
+student@oslab-02:~$ cat file4.sh
+echo there $# command line arguements: $@
+student@oslab-02:~$ echo the first parameter is $1 >> file4.sh
+student@oslab-02:~$ cat file4.sh
+echo there $# command line arguements: $@
+the first parameter is
+student@oslab-02:~$ ./file4.sh ketan goud
+there 2 command line arguements: ketan goud
+./file4.sh: line 2: the: command not found
+student@oslab-02:~$ pwd
+/home/student
+student@oslab-02:~$ cat > file5.sh
+cd $1
+ls *.$2
+student@oslab-02:~$ chmod +x file5.sh
+student@oslab-02:~$ ./file5.sh Desktop pdf
+'CSE 3142 OSLAB.pdf'  'OOP Lab Manual 2023-24.pdf'
+student@oslab-02:~$ echo number of users are `who -q`
+number of users are student student # users=2
+student@oslab-02:~$ ls -l | grep "^-"
+-rwxrwxr-x 1 student student   14 Jul 30 15:32 file5.sh
+-rw-rw-r-- 1 student student   17 Jul 23 14:24 filename
+-rw-rw-r-- 1 student student  116 Jul 23 15:02 lab1.txt
+-rw-rw-r-- 1 student student    0 Jul 23 15:02 lab2.txt
+-rw-rw-r-- 1 student student  116 Jul 23 14:56 lab.txt
+-rw-rw-r-- 1 student student    0 Jul 23 15:15 numberofusers.txt
+-rw-rw-r-- 1 student student   20 Jul 23 14:29 os.txt
+-rw-rw-r-- 1 student student    0 Jul 30 14:15 script.sh~
+-rw-rw-r-- 1 student student  589 Jul 26 10:52 Untitled1.ipynb
+-rw-rw-r-- 1 student student  724 Jul 26 10:52 Untitled.ipynb
+-rw-rw-r-- 1 student student  143 Jul 23 15:09 user.txt
+student@oslab-02:~$ ls *.?
+ls: cannot access '*.?': No such file or directory
+student@oslab-02:~$ ls *.???
+lab1.txt  lab.txt            os.txt      user.txt
+lab2.txt  numberofusers.txt  script.sh~
+student@oslab-02:~$ cat > file3
+the number of users are $1
+student@oslab-02:~$ cat > file3.sh
+echo the number of users are 
+who -q
+student@oslab-02:~$ chmod +x file3.sh
+student@oslab-02:~$ ./file3.sh 
+the number of users are
+student student
+# users=2
+student@oslab-02:~$ cat > file4.sh
+echo ls -l | grep "^-"^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D^student@oslab-02:~$ file4.sh
+file4.sh: command not found
+student@oslab-02:~$ cat file4.sh
+echo ls -l | grstudent@oslab-02:~$ rm file4.sh
+student@oslab-02:~$ cat > file4.sh
+ls -l | grep "^-"
+student@oslab-02:~$ chmod +x file4.sh
+student@oslab-02:~$ ./file4.sh 
+-rwxrwxr-x 1 student student   18 Jul 30 15:45 file4.sh
+-rw-rw-r-- 1 student student  116 Jul 23 15:02 lab1.txt
+-rw-rw-r-- 1 student student    0 Jul 23 15:02 lab2.txt
+-rw-rw-r-- 1 student student  116 Jul 23 14:56 lab.txt
+-rw-rw-r-- 1 student student    0 Jul 23 15:15 numberofusers.txt
+-rw-rw-r-- 1 student student   20 Jul 23 14:29 os.txt
+-rw-rw-r-- 1 student student    0 Jul 30 14:15 script.sh~
+-rw-rw-r-- 1 student student  589 Jul 26 10:52 Untitled1.ipynb
+-rw-rw-r-- 1 student student  724 Jul 26 10:52 Untitled.ipynb
+-rw-rw-r-- 1 student student  143 Jul 23 15:09 user.txt
+student@oslab-02:~$ cat > file.sh
+ls *.???
+student@oslab-02:~$ chmod +x file.sh
+student@oslab-02:~$ ./file.sh 
+lab1.txt  lab.txt	     os.txt	 user.txt
+lab2.txt  numberofusers.txt  script.sh~
+student@oslab-02:~$ cat > file6.sh
+cp *.$1 $2
+student@oslab-02:~$ chmod +x file6.sh
+student@oslab-02:~$ ./file6.sh txt /home/student/copied 
+cp: target '/home/student/copied': No such file or directory
+student@oslab-02:~$ ./file6.sh txt /home/student/220905260_Ketan/Week_2/copied 
+student@oslab-02:~$ (sleep 10; echo done) &
+[2] 6995
+student@oslab-02:~$ done
+kill 6995
+bash: kill: (6995) - No such process
+[2]-  Done                    ( sleep 10; echo done )
+student@oslab-02:~$ cat > file.sh
+cd $1
+ls *.?
+student@oslab-02:~$ chmod +x file.sh
+student@oslab-02:~$ ./file.sh /home/student/220905260_Ketan/Week_2
+hello.c  hello.t
+student@oslab-02:~$ cat > num1.txt
+5
+2
+8
+1
+9 
+student@oslab-02:~$ cat > num2.txt
+3
+7
+4
+0
+6
+student@oslab-02:~$ cat > file7.sh
+sort -nu $1 >> sort -nu $2 >> $3
+student@oslab-02:~$ chmod +x file7.sh
+student@oslab-02:~$ cat us.txt
+cat: us.txt: No such file or directory
+student@oslab-02:~$ cat> us.txt
+student@oslab-02:~$ ./file7.sh num1.txt num2.txt us.txt
+student@oslab-02:~$ cat us.txt
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+student@oslab-02:~$ 6 >> num1.txt
+6: command not found
+student@oslab-02:~$ cat > num3.txt
+1
+5
+3
+9
+7
+6
+4
+student@oslab-02:~$ cat > num4.txt
+8
+2
+4
+0
+6
+student@oslab-02:~$ cat> us2.txt
+student@oslab-02:~$ cat us2.txt
+student@oslab-02:~$ ./file7.sh num3.txt num4.txt us2.txt
+student@oslab-02:~$ cat us2.txt
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+student@oslab-02:~$ 
+

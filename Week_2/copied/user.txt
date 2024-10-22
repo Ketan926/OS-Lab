@@ -1,0 +1,17 @@
+220905249
+230905051
+Desktop
+Documents
+Downloads
+filename
+lab1.txt
+lab2.txt
+lab.txt
+Music
+os.txt
+Pictures
+Public
+snap
+Templates
+user.txt
+Videos
